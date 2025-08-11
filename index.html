@@ -20,58 +20,51 @@
         <link href="assets/libs/@iconscout/unicons/css/line.css" type="text/css" rel="stylesheet">
         <link href="assets/libs/@mdi/font/css/materialdesignicons.min.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="assets/css/tailwind.css">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     </head>
     
     <body class="font-poppins text-base text-black dark:text-white dark:bg-slate-900">
-
-
-        
         <!-- Navbar Start -->
         <nav class="navbar" id="navbar">
             <div class="container flex flex-wrap items-center justify-between">
                 <a class="navbar-brand md:me-8" href="index.html">
-                    <!-- Assurez-vous que les logos sont les vôtres ou correspondent à votre image de marque -->
                     <img src="assets/images/logo.png" width="150" class="inline-block dark:hidden" alt="Logo Dark">
                     <img src="assets/images/logo.png" width="150" class="hidden dark:inline-block" alt="Logo Light">
                 </a>
-
-                <!-- Icônes de réseaux sociaux, vous pouvez les ajuster ou les supprimer selon vos besoins -->
                 <div class="nav-icons flex items-center lg_992:order-2 ms-auto md:ms-8">
                     <ul class="list-none menu-social mb-0">
                         <li class="inline">
-                            <!-- Remplacez # par vos liens réels de réseaux sociaux -->
-                            <a href="#">
-                        <span class="login-btn-primary">
-                            <span class="btn btn-icon btn-sm rounded-full bg-amber-500 hover:bg-amber-600 border-amber-500 hover:border-amber-600 text-white">
-                                <i class="uil uil-dribbble align-middle"></i>
-                            </span>
+                             <a href="https://www.linkedin.com/in/carole-dapah-049a58265/" target="_blank">
+                    <span class="login-btn-primary">
+                        <span class="btn btn-icon btn-sm rounded-full bg-amber-500 hover:bg-amber-600 
+                                     border-amber-500 hover:border-amber-600 text-white">
+                            <i class="uil uil-linkedin align-middle"></i>
                         </span>
-                            </a>
-                            <a href="#">
-                        <span class="login-btn-primary">
-                            <span class="btn btn-icon btn-sm rounded-full bg-amber-500 hover:bg-amber-600 border-amber-500 hover:border-amber-600 text-white">
-                                <i class="uil uil-behance align-middle"></i>
-                            </span>
+                    </span>
+                </a>
+                             <a href="https://www.facebook.com/webcreateplus/" target="_blank">
+                    <span class="login-btn-primary">
+                        <span class="btn btn-icon btn-sm rounded-full bg-amber-500 hover:bg-amber-600 
+                                     border-amber-500 hover:border-amber-600 text-white">
+                            <i class="uil uil-facebook-f align-middle"></i>
                         </span>
-                            </a>
-                            <a href="#">
-                        <span class="login-btn-primary">
-                            <span class="btn btn-icon btn-sm rounded-full bg-amber-500 hover:bg-amber-600 border-amber-500 hover:border-amber-600 text-white">
-                                <i class="uil uil-instagram align-middle"></i>
-                            </span>
-                        </span>
+                    </span>
+                </a>
+                            <a href="https://www.instagram.com/cdapah/" target="_blank">
+                                <span class="login-btn-primary">
+                                    <span class="btn btn-icon btn-sm rounded-full bg-amber-500 hover:bg-amber-600 border-amber-500 hover:border-amber-600 text-white">
+                                        <i class="uil uil-instagram align-middle"></i>
+                                    </span>
+                                </span>
                             </a>
                         </li>
                     </ul>
-                    <!-- Bouton pour menu mobile -->
                     <button data-collapse="menu-collapse" type="button" class="collapse-btn inline-flex items-center ms-2 text-dark dark:text-white lg_992:hidden" aria-controls="menu-collapse" aria-expanded="false">
                         <span class="sr-only">Navigation Menu</span>
                         <i class="mdi mdi-menu text-[24px]"></i>
                     </button>
                 </div>
-
-                <!-- Menu de navigation principal -->
                 <div class="navigation lg_992:order-1 lg_992:flex hidden me-auto" id="menu-collapse">
                     <ul class="navbar-nav" id="navbar-navlist">
                         <li class="nav-item">
@@ -84,13 +77,10 @@
                             <a class="nav-link" href="#experience">Expérience</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#education">Formation</a>
+                            <a class="nav-link" href="#projets">Projets</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#project">Projets</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#skills">Compétences</a>
+                            <a class="nav-link" href="#competences">Compétences</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#contact">Contact</a>
@@ -99,7 +89,6 @@
                 </div>
             </div>
         </nav>
-
         <!-- Navbar End -->
 
         <!-- Start Hero -->
@@ -161,15 +150,18 @@
 
                             <div class="mt-6">
                                 <!-- Lien pour voir vos travaux ou projets -->
-                                <a href="#project" class="btn bg-amber-500/10 hover:bg-amber-500 border-amber-500/10 hover:border-amber-500 text-amber-500 hover:text-white rounded-md me-2 mt-2">Voir Mes Projets</a>
+                                <a href="javascript:void(0)" onclick="openProjects()" 
+                                        class="btn bg-amber-500/10 hover:bg-amber-500 border-amber-500/10 
+                                        hover:border-amber-500 text-amber-500 hover:text-white rounded-md me-2 mt-2">
+                                        Voir Mes Projets
+                                </a>
                             </div>
-                        </div>
                     </div><!--end grid-->
                 </div><!--end grid-->
             </div><!--end container-->
 
 
-            <div class="container md:mt-24 mt-16">
+            <div class="container md:mt-24 mt-16" id="competences">
                 <div class="grid grid-cols-1 pb-8 text-center">
                     <h3 class="mb-6 md:text-2xl text-xl md:leading-normal leading-normal font-semibold">Centres d'Intérêt et Compétences</h3>
                     <p class="text-slate-400 max-w-xl mx-auto text-[15px]">Passionnée par la programmation et les nouvelles technologies, je suis constamment en quête de nouveaux défis et apprentissages dans le domaine de l'informatique.</p>
@@ -484,7 +476,7 @@
                 <div class="grid grid-cols-1 lg:grid-cols-12 md:grid-cols-2 mt-8 items-center gap-[30px]">
                     <div class="lg:col-span-8">
                         <div class="p-6 rounded-md shadow bg-white dark:bg-slate-900">
-                            <form method="post" name="myForm" id="myForm" onsubmit="return validateForm()">
+                            <form action="https://formspree.io/f/xwpqykyn" method="POST">
                                 <p class="mb-0" id="error-msg"></p>
                                 <div id="simple-msg"></div>
                                 <div class="grid lg:grid-cols-12 lg:gap-5">
@@ -568,13 +560,15 @@
                         </div>
 
                         <ul class="lg:col-span-4 list-none md:text-end text-center mt-6 md:mt-0">
-                            <li class="inline"><a href="https://dribbble.com/" target="_blank" class="btn btn-icon btn-sm border border-gray-800 rounded-md hover:border-amber-500 dark:hover:border-amber-500 hover:bg-amber-500 dark:hover:bg-amber-500"><i class="uil uil-dribbble align-middle" title="dribbble"></i></a></li>
-                            <li class="inline"><a href="https://www.behance.net/" target="_blank" class="btn btn-icon btn-sm border border-gray-800 rounded-md hover:border-amber-500 dark:hover:border-amber-500 hover:bg-amber-500 dark:hover:bg-amber-500"><i class="uil uil-behance" title="Behance"></i></a></li>
-                            <li class="inline"><a href="http://linkedin.com/in/" target="_blank" class="btn btn-icon btn-sm border border-gray-800 rounded-md hover:border-amber-500 dark:hover:border-amber-500 hover:bg-amber-500 dark:hover:bg-amber-500"><i class="uil uil-linkedin" title="Linkedin"></i></a></li>
-                            <li class="inline"><a href="https://www.facebook.com/" target="_blank" class="btn btn-icon btn-sm border border-gray-800 rounded-md hover:border-amber-500 dark:hover:border-amber-500 hover:bg-amber-500 dark:hover:bg-amber-500"><i class="uil uil-facebook-f align-middle" title="facebook"></i></a></li>
-                            <li class="inline"><a href="https://www.instagram.com/" target="_blank" class="btn btn-icon btn-sm border border-gray-800 rounded-md hover:border-amber-500 dark:hover:border-amber-500 hover:bg-amber-500 dark:hover:bg-amber-500"><i class="uil uil-instagram align-middle" title="instagram"></i></a></li>
+                            <!-- LinkedIn -->
+                            <li class="inline"><a href="https://www.linkedin.com/in/carole-dapah-049a58265/" target="_blank" class="btn btn-icon btn-sm border border-gray-800 rounded-md hover:border-amber-500 dark:hover:border-amber-500 hover:bg-amber-500 dark:hover:bg-amber-500"><i class="uil uil-linkedin" title="LinkedIn"></i></a></li>
+                            <!-- Facebook -->
+                            <li class="inline"><a href="https://www.facebook.com/webcreateplus" target="_blank" class="btn btn-icon btn-sm border border-gray-800 rounded-md hover:border-amber-500 dark:hover:border-amber-500 hover:bg-amber-500 dark:hover:bg-amber-500"><i class="uil uil-facebook-f align-middle" title="Facebook"></i></a></li>
+                            <!-- Instagram -->
+                            <li class="inline"><a href="https://www.instagram.com/cdapah/" target="_blank" class="btn btn-icon btn-sm border border-gray-800 rounded-md hover:border-amber-500 dark:hover:border-amber-500 hover:bg-amber-500 dark:hover:bg-amber-500"><i class="uil uil-instagram align-middle" title="Instagram"></i></a></li>
+                            
                             <li class="inline"><a href="https://twitter.com/" target="_blank" class="btn btn-icon btn-sm border border-gray-800 rounded-md hover:border-amber-500 dark:hover:border-amber-500 hover:bg-amber-500 dark:hover:bg-amber-500"><i class="uil uil-twitter align-middle" title="twitter"></i></a></li>
-                            <li class="inline"><a href="mailto:contact@example.com" class="btn btn-icon btn-sm border border-gray-800 rounded-md hover:border-amber-500 dark:hover:border-amber-500 hover:bg-amber-500 dark:hover:bg-amber-500"><i class="uil uil-envelope align-middle" title="email"></i></a></li>
+                            <li class="inline"><a href="mailto:dapahcarole1@gmail.com" class="btn btn-icon btn-sm border border-gray-800 rounded-md hover:border-amber-500 dark:hover:border-amber-500 hover:bg-amber-500 dark:hover:bg-amber-500"><i class="uil uil-envelope align-middle" title="email"></i></a></li>
                         </ul><!--end icon-->
                     </div><!--end grid-->
                 </div><!--end container-->
@@ -616,5 +610,7 @@
         <script src="assets/js/plugins.init.js"></script>
         <script src="assets/js/app.js"></script>
         <!-- JAVASCRIPTS -->
+         
+    
     </body>
 </html>

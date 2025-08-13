@@ -476,7 +476,7 @@
                 <div class="grid grid-cols-1 lg:grid-cols-12 md:grid-cols-2 mt-8 items-center gap-[30px]">
                     <div class="lg:col-span-8">
                         <div class="p-6 rounded-md shadow bg-white dark:bg-slate-900">
-                            <form action="https://formspree.io/f/xwpqykyn" method="POST">
+                            <form id="myForm" method="POST" action="https://formspree.io/f/xwpqykyn" autocomplete="off">
                                 <p class="mb-0" id="error-msg"></p>
                                 <div id="simple-msg"></div>
                                 <div class="grid lg:grid-cols-12 lg:gap-5">
@@ -500,6 +500,10 @@
                                 </div>
                                 <button type="submit" id="submit" name="send" class="btn bg-amber-500 hover:bg-amber-600 border-amber-500 hover:border-amber-600 text-white rounded-md h-11 justify-center flex items-center">Envoyer le Message</button>
                             </form>
+                            <div id="msg-status" style="display:none; color:green; margin-top:10px;">
+                                    ✅ Votre message a bien été envoyé !
+                            </div>
+
                         </div>
                     </div>
 
@@ -610,6 +614,40 @@
         <script src="assets/js/plugins.init.js"></script>
         <script src="assets/js/app.js"></script>
         <!-- JAVASCRIPTS -->
+         <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("myForm");
+    const msgStatus = document.getElementById("msg-status");
+
+    form.addEventListener("submit", function (event) {
+        event.preventDefault(); // Empêche l'ouverture de la page Formspree
+
+        fetch(form.action, {
+            method: form.method,
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+        }).then(response => {
+            if (response.ok) {
+                // Affiche le message
+                msgStatus.style.display = "block";
+
+                // Vide les champs
+                form.reset();
+
+                // Recharge la page après 1,5 secondes
+                setTimeout(() => {
+                    location.reload();
+                }, 1500);
+            } else {
+                alert("❌ Une erreur est survenue. Veuillez réessayer.");
+            }
+        }).catch(error => {
+            alert("❌ Erreur réseau. Veuillez réessayer.");
+        });
+    });
+});
+</script>
+
          
     
     </body>

@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mes Projets - Portfolio Carole</title>
+    <meta name="description" content="Carole portfolio - Projets de développement">
+    <meta name="keywords" content="Carole portfolio, développement, projets">
+    <meta name="author" content="Carole DAPAH">
+    <link href="assets/images/favicon.ico" rel="shortcut icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                        'serif': ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        'navy': {
+                            50: '#f0f4f8',
+                            100: '#d9e2ec',
+                            200: '#bcccdc',
+                            300: '#9fb3c8',
+                            400: '#829ab1',
+                            500: '#627d98',
+                            600: '#486581',
+                            700: '#334e68',
+                            800: '#243b53',
+                            900: '#1a202c',
+                            950: '#0f1419'
+                        },
+                        'amber': {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Glassmorphism avec couleurs orange/jaune */
+        .glass-box {
+            background: linear-gradient(135deg, rgba(251, 191, 36, 0.15), rgba(245, 158, 11, 0.15));
+            border: 1px solid rgba(251, 191, 36, 0.3);
+            border-radius: 16px;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 20px rgba(245, 158, 11, 0.2);
+        }
+        
+        .glass-box:hover {
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 12px 40px rgba(245, 158, 11, 0.4);
+            border-color: rgba(251, 191, 36, 0.5);
+        }
+        
+        /* Cartes de projet avec glassmorphism */
+        .project-card {
+            background: linear-gradient(135deg, rgba(26, 32, 44, 0.95), rgba(36, 59, 83, 0.95));
+            border: 1px solid rgba(251, 191, 36, 0.2);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(245, 158, 11, 0.3);
+            border-color: rgba(251, 191, 36, 0.4);
+        }
+        
+        /* Boutons avec animations fluides */
+        .btn-primary {
+            background: linear-gradient(135deg, #f59e0b, #fbbf24);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.5);
+            background: linear-gradient(135deg, #d97706, #f59e0b);
+        }
+        
+        .btn-secondary {
+            border: 2px solid #fbbf24;
+            color: #fbbf24;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .btn-secondary:hover {
+            background: #fbbf24;
+            color: #1a202c;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(251, 191, 36, 0.3);
+        }
+        
+        /* Animations d'entrée */
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .fade-in-up.delay-1 { animation-delay: 0.2s; }
+        .fade-in-up.delay-2 { animation-delay: 0.4s; }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Effet de survol pour les vidéos */
+        .video-container {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .video-container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(245, 158, 11, 0.3);
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-navy-900 text-white min-h-screen">
+
+<!-- Navbar Start -->
+<nav class="fixed top-0 w-full z-50 bg-navy-900/90 backdrop-blur-md border-b border-amber-500/20">
+    <div class="container mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+            <a href="index.html" class="flex items-center space-x-2">
+                <div class="w-10 h-10 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center">
+                    <span class="text-navy-900 font-bold text-lg">C</span>
+                </div>
+                <span class="font-serif text-xl font-semibold text-amber-400">Carole</span>
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="text-gray-300 hover:text-amber-400 transition-colors duration-300">Accueil</a>
+                <a href="projets.html" class="text-amber-400 font-medium">Projets</a>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <a href="https://www.linkedin.com/in/carole-dapah-049a58265/" target="_blank" 
+                   class="w-10 h-10 bg-amber-500 hover:bg-amber-600 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110">
+                    <i class="uil uil-linkedin text-white"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Section Projets -->
+<section class="pt-24 pb-16 px-6">
+    <div class="container mx-auto max-w-7xl">
+        
+        <!-- En-tête de section -->
+        <div class="text-center mb-16 fade-in-up">
+            <h1 class="font-serif text-5xl md:text-6xl font-bold mb-6">
+                Mes <span class="text-amber-400">Projets</span>
+            </h1>
+            <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+                Découvrez mes réalisations techniques et créatives
+            </p>
+        </div>
+
+        <div class="space-y-24">
+
+            <!-- Projet 1: MusicalQuiz -->
+            <div class="project-card rounded-3xl p-8 md:p-12 fade-in-up delay-1">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    
+                    <!-- Vidéo -->
+                    <div class="flex justify-center lg:order-1">
+                        <div class="video-container bg-black rounded-[2.5rem] p-4 shadow-2xl" style="width: 320px;">
+                            <video 
+                                id="quizVideo"
+                                src="assets/images/logos/Illustration_ecran_detail.mp4"
+                                class="rounded-[2rem] object-cover w-full h-auto"
+                                controls>
+                            </video>
+                        </div>
+                    </div>
+
+                    <!-- Contenu -->
+                    <div class="lg:order-2">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-12 h-12 bg-gradient-to-br from-amber-400 to-amber-600 rounded-2xl flex items-center justify-center">
+                                <span class="text-2xl">🎵</span>
+                            </div>
+                            <h2 class="font-serif text-4xl font-bold text-white">MusicalQuiz</h2>
+                        </div>
+                        
+                        <p class="text-lg text-gray-300 mb-8 leading-relaxed">
+                            Application Android de quiz musical intégrant MVVM, Room DB et l'API Deezer pour une expérience musicale immersive et interactive.
+                        </p>
+
+                        <!-- Technologies -->
+                        <div class="mb-8">
+                            <h3 class="text-xl font-semibold mb-4 flex items-center gap-3">
+                                <div class="w-8 h-8 bg-amber-500 rounded-lg flex items-center justify-center">
+                                    <i class="uil uil-code-branch text-white text-sm"></i>
+                                </div>
+                                Technologies Utilisées
+                            </h3>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="glass-box p-4 flex items-center gap-3">
+                                    <i class="uil uil-code-branch text-amber-400 text-xl"></i>
+                                    <span class="text-white font-medium">Kotlin</span>
+                                </div>
+                                <div class="glass-box p-4 flex items-center gap-3">
+                                    <i class="uil uil-database text-amber-400 text-xl"></i>
+                                    <span class="text-white font-medium">MVVM</span>
+                                </div>
+                                <div class="glass-box p-4 flex items-center gap-3">
+                                    <i class="uil uil-database text-amber-400 text-xl"></i>
+                                    <span class="text-white font-medium">Room DB</span>
+                                </div>
+                                <div class="glass-box p-4 flex items-center gap-3">
+                                    <i class="uil uil-music-note text-amber-400 text-xl"></i>
+                                    <span class="text-white font-medium">API Deezer</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Fonctionnalités -->
+                        <div>
+                            <h3 class="text-xl font-semibold mb-4 flex items-center gap-3">
+                                <div class="w-8 h-8 bg-amber-500 rounded-lg flex items-center justify-center">
+                                    <i class="uil uil-star text-white text-sm"></i>
+                                </div>
+                                Fonctionnalités Clés
+                            </h3>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="glass-box p-4 flex items-center gap-3">
+                                    <span class="text-2xl">🔍</span>
+                                    <span class="text-white font-medium">Recherche en temps réel</span>
+                                </div>
+                                <div class="glass-box p-4 flex items-center gap-3">
+                                    <span class="text-2xl">📂</span>
+                                    <span class="text-white font-medium">Gestion de playlists</span>
+                                </div>
+                                <div class="glass-box p-4 flex items-center gap-3">
+                                    <span class="text-2xl">🎨</span>
+                                    <span class="text-white font-medium">Interface moderne</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projet 2: Unistrabble -->
+            <div class="project-card rounded-3xl p-8 md:p-12 fade-in-up delay-2">
+                
+                <!-- En-tête du projet -->
+                <div class="flex items-center justify-between mb-8">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-gradient-to-br from-amber-400 to-amber-600 rounded-2xl flex items-center justify-center">
+                            <span class="text-2xl">🎯</span>
+                        </div>
+                        <h2 class="font-serif text-4xl font-bold text-white">Unistrabble</h2>
+                    </div>
+                    <a href="https://unistrabble.vercel.app/" target="_blank" 
+                       class="btn-primary px-6 py-3 rounded-full font-medium flex items-center gap-2 hover:gap-3 transition-all duration-300">
+                        Visiter le site
+                        <i class="uil uil-external-link-alt"></i>
+                    </a>
+                </div>
+
+                <!-- Description -->
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold mb-4 text-amber-400">Description du Projet</h3>
+                    <p class="text-lg text-gray-300 leading-relaxed">
+                        Projet intégrateur développé par une équipe de 9 personnes, visant à créer une plateforme universitaire interactive. 
+                        Le projet combine la logique des jeux, la messagerie, la gestion de thèmes, l'IA et la gestion du temps pour offrir 
+                        une expérience immersive et collaborative.
+                    </p>
+                </div>
+
+                <!-- Images -->
+                <div class="grid md:grid-cols-2 gap-8 mb-12">
+                    <div class="group cursor-pointer">
+                        <img src="assets/images/interface1.png" alt="Interface Unistrabble" 
+                             class="rounded-2xl shadow-2xl w-full h-64 object-cover transition-all duration-300 group-hover:scale-105 group-hover:shadow-amber-500/20">
+                    </div>
+                    <div class="group cursor-pointer">
+                        <img src="assets/images/gameplay1.png" alt="Gameplay Unistrabble" 
+                             class="rounded-2xl shadow-2xl w-full h-64 object-cover transition-all duration-300 group-hover:scale-105 group-hover:shadow-amber-500/20">
+                    </div>
+                </div>
+
+                <!-- Vidéos -->
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold mb-6 text-amber-400">Démonstrations Vidéo</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="video-container">
+                            <video src="assets/images/logos/gameplay1.mp4" controls 
+                                   class="rounded-2xl shadow-2xl w-full" preload="none">
+                            </video>
+                        </div>
+                        <div class="video-container">
+                            <video src="assets/images/logos/gameplay2.mp4" controls 
+                                   class="rounded-2xl shadow-2xl w-full" preload="none">
+                            </video>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technologies et Fonctionnalités -->
+                <div class="grid lg:grid-cols-2 gap-12">
+                    
+                    <!-- Technologies -->
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-6 flex items-center gap-3">
+                            <div class="w-8 h-8 bg-amber-500 rounded-lg flex items-center justify-center">
+                                <i class="uil uil-code-branch text-white text-sm"></i>
+                            </div>
+                            Technologies Utilisées
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="glass-box p-4 flex items-center gap-3">
+                                <span class="text-2xl">🎨</span>
+                                <span class="text-white font-medium">Figma</span>
+                            </div>
+                            <div class="glass-box p-4 flex items-center gap-3">
+                                <span class="text-2xl">📋</span>
+                                <span class="text-white font-medium">Trello</span>
+                            </div>
+                            <div class="glass-box p-4 flex items-center gap-3">
+                                <span class="text-2xl">🎮</span>
+                                <span class="text-white font-medium">Godot</span>
+                            </div>
+                            <div class="glass-box p-4 flex items-center gap-3">
+                                <span class="text-2xl">🐍</span>
+                                <span class="text-white font-medium">Python</span>
+                            </div>
+                            <div class="glass-box p-4 flex items-center gap-3">
+                                <span class="text-2xl">💾</span>
+                                <span class="text-white font-medium">Base de données</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Fonctionnalités -->
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-6 flex items-center gap-3">
+                            <div class="w-8 h-8 bg-amber-500 rounded-lg flex items-center justify-center">
+                                <i class="uil uil-star text-white text-sm"></i>
+                            </div>
+                            Fonctionnalités Clés
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="glass-box p-4 flex items-center gap-3">
+                                <span class="text-2xl">🤝</span>
+                                <span class="text-white font-medium">Multijoueur</span>
+                            </div>
+                            <div class="glass-box p-4 flex items-center gap-3">
+                                <span class="text-2xl">🧠</span>
+                                <span class="text-white font-medium">IA intégrée</span>
+                            </div>
+                            <div class="glass-box p-4 flex items-center gap-3">
+                                <span class="text-2xl">🎨</span>
+                                <span class="text-white font-medium">Thèmes personnalisés</span>
+                            </div>
+                            <div class="glass-box p-4 flex items-center gap-3">
+                                <span class="text-2xl">💬</span>
+                                <span class="text-white font-medium">Chat intégré</span>
+                            </div>
+                            <div class="glass-box p-4 flex items-center gap-3">
+                                <span class="text-2xl">⏰</span>
+                                <span class="text-white font-medium">Horloge en jeu</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-navy-950 border-t border-amber-500/20 py-12">
+    <div class="container mx-auto px-6 text-center">
+        <div class="flex items-center justify-center gap-2 mb-4">
+            <div class="w-8 h-8 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center">
+                <span class="text-navy-900 font-bold">C</span>
+            </div>
+            <span class="font-serif text-xl font-semibold text-amber-400">Carole DAPAH</span>
+        </div>
+        <p class="text-gray-400">
+            © <span id="currentYear"></span> Carole DAPAH. Conçu avec <span class="text-red-400">❤️</span> et passion
+        </p>
+    </div>
+</footer>
+
+<script>
+    // Année actuelle
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+    
+    // Volume vidéo
+    document.addEventListener("DOMContentLoaded", function() {
+        const video = document.getElementById("quizVideo");
+        if (video) {
+            video.volume = 0.02;
+        }
+    });
+    
+    // Animation au scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animationPlayState = 'running';
+            }
+        });
+    }, observerOptions);
+    
+    document.querySelectorAll('.fade-in-up').forEach(el => {
+        el.style.animationPlayState = 'paused';
+        observer.observe(el);
+    });
+</script>
+
+</body>
+</html>
